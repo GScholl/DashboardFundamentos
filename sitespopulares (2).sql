@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08/10/2023 às 18:45
+-- Tempo de geração: 10/10/2023 às 00:50
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.0.28
 
@@ -41,6 +41,17 @@ CREATE TABLE `sitespopulares` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Despejando dados para a tabela `sitespopulares`
+--
+
+INSERT INTO `sitespopulares` (`SiteID`, `NomeSite`, `URL`, `CustoUtilizacao`, `Requisitos`, `Salario`, `TipoTrabalho`, `Caracteristicas`, `Vantagens`, `Desvantagens`) VALUES
+(1, 'LinkedIn', 'https://www.linkedin.com', 0.00, 'Depende do empregador', 'Varia de acordo com a vaga', 'Tempo Integral e Meio Período', 'Rede profissional ampla', 'Muitas oportunidades de networking', 'Competição acirrada'),
+(2, 'Indeed', 'https://www.indeed.com', 0.00, 'Nenhum', 'Varia de acordo com a vaga', 'Tempo Integral e Meio Período', 'Interface fácil de usar', 'Ampla variedade de vagas', 'Alguns anúncios de emprego podem ser spam'),
+(3, 'Glassdoor', 'https://www.glassdoor.com', 0.00, 'Depende do empregador', 'Varia de acordo com a vaga', 'Tempo Integral e Meio Período', 'Avaliações de empresas', 'Informações detalhadas sobre salários', 'Nem todas as empresas têm avaliações'),
+(4, 'Monster', 'https://www.monster.com', 0.00, 'Depende do empregador', 'Varia de acordo com a vaga', 'Tempo Integral e Meio Período', 'Vagas em diversas áreas', 'Ferramentas de busca avançadas', 'Anúncios de emprego repetitivos'),
+(5, 'CareerBuilder', 'https://www.careerbuilder.com', 0.00, 'Depende do empregador', 'Varia de acordo com a vaga', 'Tempo Integral e Meio Período', 'Ampla rede de parceiros', 'Recursos de pesquisa avançados', 'Mensagens de recrutadores não solicitadas');
+
+--
 -- Índices para tabelas despejadas
 --
 
@@ -58,7 +69,7 @@ ALTER TABLE `sitespopulares`
 -- AUTO_INCREMENT de tabela `sitespopulares`
 --
 ALTER TABLE `sitespopulares`
-  MODIFY `SiteID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `SiteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

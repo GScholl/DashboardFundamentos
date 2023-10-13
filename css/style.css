@@ -1,11 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
+
 .card {
   border-radius: 16px;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: rgba(0, 255, 238, 0.25) 0px 6px 12px -2px;
   background-color: #363636;
+  color: white !important;
+}
+.card-header {
+  background-color: #3d3b3b;
 }
 
-body{
-    background-color: black;
+body {
+  background-color: rgb(30, 30, 30);
+  font-family: "Montserrat", sans-serif;
 }
- 
+
+table {
+  border-radius: 16px;
+  box-shadow: rgba(0, 255, 238, 0.25) 0px 6px 12px -2px;
+}

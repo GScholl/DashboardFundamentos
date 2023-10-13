@@ -12,7 +12,7 @@ const geradorDeChart = (Sites) => {
   $(function () {
     "use strict";
     var ticksStyle = {
-      fontColor: "#495057",
+      fontColor: "#fff",
       fontStyle: "bold",
     };
     var mode = "index";
@@ -63,7 +63,7 @@ const geradorDeChart = (Sites) => {
               gridLines: {
                 display: true,
                 lineWidth: "4px",
-                color: "rgba(0, 0, 0, .2)",
+                color: "rgba(255, 255, 255, .2)",
                 zeroLineColor: "transparent",
               },
               ticks: $.extend(
@@ -97,7 +97,7 @@ const geradorDeChart = (Sites) => {
   $(function () {
     "use strict";
     var ticksStyle = {
-      fontColor: "#495057",
+      fontColor: "#fff",
       fontStyle: "bold",
     };
     var mode = "index";

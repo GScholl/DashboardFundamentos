@@ -10,6 +10,9 @@
 .card-header {
   background-color: #3d3b3b;
 }
+.h-15{
+  height: 15vh;
+}
 
 body {
   background-color: rgb(30, 30, 30);

@@ -67,59 +67,69 @@
 
             <div class="col-12">
                 <h2 class="text-white text-center mt-3 mb-3"> Lista dos Sites de empego</h2>
-                <table class="table table-striped  table-dark table-responsive">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nome Do site</th>
-                            <th scope="col">Url</th>
-                            <th scope="col">Custo</th>
-                            <th scope="col">Requisitos</th>
-                            <th scope="col">Salário</th>
-                           
-                            <th scope="col">Caracteristicas</th>
-                            <th scope="col">Vantagens</th>
-                            <th scope="col">Desvantagens</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <div class="row gy-5">
+
+
+
+                    <?php
+
+                    $qtd = $res->num_rows;
+                    if ($qtd > 0) {
+
+
+
+                        while ($row = $res->fetch_object()) { ?> 
+                            <div class="col-lg-8 offset-lg-2">
+                                <div class="card">
+                                    <div class="row">
+                                        <div class="col-12 p-3 text-center">
+                                            <img src="<?="img/$row->logo" ?>" class="h-15 rounded mx-auto" alt="">
+                                            <h3> <?= $row->NomeSite ?></h3>
+                                        </div>
+                                        
+                                        <div class="col-12 ps-4 pe-4 pt-2  text-center pb-2"><a href="<?= $row->URL ?>"><?= $row->URL ?></a></div>
+                                        <div class="col-6 ps-4 pe-4 text-center  pt-2 pb-2">
+                                            <h5>Média de Custo de Utilização:<br> R$ <?= number_format($row->CustoUtilizacao, 2, ',', '.') ?></h5>
+                                        </div>
+                                        <div class="col-6 ps-4 pe-4  text-center pt-2 pb-2">
+                                            <h5> Salário Médio:<br>R$ <?= number_format($row->Salario, 2, ',', '.') ?></h5>
+                                        </div>
+                                        <div class="col-12 ps-4 pe-4 pt-2 pb-2">
+                                            <td colspan="1"><?= $row->Caracteristicas ?> </td>
+                                        </div>
+                                        <div class="col-12 ps-4 pe-4 pt-2 pb-2">
+                                            <p><?= $row->Requisitos ?></p>
+                                        </div>
+                                        <div class="col-lg-6 ps-4 pe-4 pt-2 pb-5">
+                                            <b class="text-justify"> - <?= $row->Vantagens ?></b>
+                                        </div>
+                                        <div class="col-lg-6 ps-4 pe-4 pt-2 pb-5">
+                                            <b class="text-justify"> - <?= $row->Desvantagens ?> </b>
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                </div>
+
+                            </div>
+
 
                         <?php
+                        }
+                    } else { ?>
 
-                        $qtd = $res->num_rows;
-                        if ($qtd > 0) {
+                        <h1>Não possui nenhum registro de site</h1>
 
+                    <?php } ?>
 
-
-                            while ($row = $res->fetch_object()) { ?>
-                                <tr>
-                                    <th scope="row"><?= $row->SiteID ?> </th>
-                                    <td colspan="1"><?= $row->NomeSite ?> </td>
-                                    <td><a href="<?= $row->URL ?>"><?= $row->URL ?></a></td>
-                                    <td colspan="1">R$ <?= number_format($row->CustoUtilizacao, 2, ',', '.') ?> </td>
-                                    <td><?= $row->Requisitos ?></td>
-                                    <td colspan="1">R$ <?= number_format($row->Salario, 2, ',', '.') ?> </td>
-                                    
-                                    <td colspan="1"><?= $row->Caracteristicas ?> </td>
-                                    <td><?= $row->Vantagens ?></td>
-                                    <td colspan="1"><?= $row->Desvantagens ?> </td>
-
-                                </tr>
-
-                            <?php
-                            }
-                        } else { ?>
-
-                            <td colspan="11">Não possui nenhum registro de site</td>
-
-                        <?php } ?>
-
-                    </tbody>
-                </table>
+                </div>
             </div>
             <div class="col-12">
 
-            <h2 class="text-center text-white">Média Salárial X Custo</h4>
+                <h2 class="text-center text-white">Média Salárial X Custo</h4>
             </div>
             <div class="col-lg-6 mb-3">
                 <div class="card">
@@ -156,7 +166,7 @@
                 <div class="card">
                     <div class="card-header border-0">
                         <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Custo do plano pago</h3>
+                            <h3 class="card-title">Média de Custo do plano pago</h3>
 
                         </div>
                     </div>
